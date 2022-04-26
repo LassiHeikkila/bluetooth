@@ -4,7 +4,7 @@ import (
 	"math/rand"
 	"time"
 
-	"tinygo.org/x/bluetooth"
+	"github.com/LassiHeikkila/bluetooth"
 )
 
 var adapter = bluetooth.DefaultAdapter

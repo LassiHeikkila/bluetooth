@@ -9,7 +9,7 @@ import (
 	"machine"
 	"time"
 
-	"tinygo.org/x/bluetooth"
+	"github.com/LassiHeikkila/bluetooth"
 	"tinygo.org/x/drivers/ws2812"
 )
 

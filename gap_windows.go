@@ -1,7 +1,7 @@
 package bluetooth
 
 import (
-	"tinygo.org/x/bluetooth/winbt"
+	"github.com/LassiHeikkila/bluetooth/winbt"
 )
 
 // Address contains a Bluetooth MAC address.
