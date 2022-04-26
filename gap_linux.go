@@ -183,6 +183,8 @@ func (a *Adapter) Scan(callback func(*Adapter, ScanResult)) error {
 						props.Name = val.Value().(string)
 					case "UUIDs":
 						props.UUIDs = val.Value().([]string)
+					case "ManufacturerData":
+						props.ManufacturerData = convertVariantMapToAnyMap(val.Value().(map[uint16]dbus.Variant))
 					}
 				}
 				callback(a, makeScanResult(props))
@@ -228,8 +230,9 @@ func makeScanResult(props *device.Device1Properties) ScanResult {
 		Address: a,
 		AdvertisementPayload: &advertisementFields{
 			AdvertisementFields{
-				LocalName:    props.Name,
-				ServiceUUIDs: serviceUUIDs,
+				LocalName:        props.Name,
+				ServiceUUIDs:     serviceUUIDs,
+				ManufacturerData: props.ManufacturerData,
 			},
 		},
 	}
